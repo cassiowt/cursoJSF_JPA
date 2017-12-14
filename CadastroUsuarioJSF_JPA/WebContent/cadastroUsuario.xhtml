@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:body>
+	<ui:composition template="templates/common.xhtml">
+		<ui:define name="content">
+			<f:loadBundle basename="resources.messages" var="msgs" />
+			<h3>
+				<h:outputLabel value="#{msgs.tituloPageCadastroUsuario}" />
+			</h3>
+			<h:form prependId="false">
+				<h:panelGrid columns="3">
+					<h:outputLabel value="#{msgs.labelId}" />
+					<h:inputText id="Codigo" value="#{usuarioMB.usuario.id}"
+						required="true" />
+					<h:message for="Codigo" />
+
+					<h:outputLabel value="#{msgs.labelCpf}" />
+					<h:inputText id="CPF" value="#{usuarioMB.usuario.cpf}"
+						required="true" />
+					<h:message for="CPF" />
+
+					<h:outputLabel value="#{msgs.labelNome}" />
+					<h:inputText id="Nome" value="#{usuarioMB.usuario.nome}"
+						required="true" />
+					<h:message for="Nome" />
+
+					<h:outputLabel value="#{msgs.labelEmail}" />
+					<h:inputText id="Email" value="#{usuarioMB.usuario.email}"
+						required="true" />
+					<h:message for="Email" />
+
+					<h:outputLabel value="#{msgs.labelRg}" />
+					<h:inputText id="RG" value="#{usuarioMB.usuario.rg}"
+						required="true" />
+					<h:message for="RG" />
+
+					<h:outputLabel value="#{msgs.labelDataNascimento}" />
+					<h:inputText id="DataNascimento"
+						value="#{usuarioMB.usuario.dataNascimento}" required="true" >
+						<f:convertDateTime pattern="dd/MM/yyyy"/>	
+					</h:inputText>
+					<h:message for="DataNascimento" />
+
+					<h:outputLabel value="#{msgs.labelSalario}" />
+					<h:inputText id="Salario" value="#{usuarioMB.usuario.salario}"
+						required="true" />
+					<h:message for="Salario" />
+				</h:panelGrid>
+				<h:commandButton action="#{usuarioMB.salvaUsuario}"
+					value="#{msgs.btnSalvar}" />
+				<h:commandButton type="reset" immediate="true"
+					value="#{msgs.btnCancelar}" />
+			</h:form>
+
+
+			<h:outputLabel value="#{usuarioMB.msg}" />
+		</ui:define>
+	</ui:composition>
+</h:body>
+
+</html>

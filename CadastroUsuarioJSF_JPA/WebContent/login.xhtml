@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:body>
+<f:loadBundle basename="resources.messages" var="msgs" />
+	<h:form prependId="false">
+	<h1><h:outputLabel value="#{msgs.tituloPageLogin}"/></h1>
+	<h:panelGrid bgcolor="yellow" border="1" cellpadding="3">
+		<h:panelGroup >
+			<h:outputLabel value="#{msgs.labeLogin}" />
+			<h:inputText id="lLogin" value="#{login.login}" required="true"/>
+			<h:message for="lLogin" style="background-Color: red"/>
+		</h:panelGroup>
+		<h:panelGroup>
+			<h:outputLabel value="#{msgs.labelSenha}" />
+			<h:inputText id="lSenha" value="#{login.senha}" required="true" 
+		   		requiredMessage="Digite a senha, seu boca berta!!!! ; )"/>
+			<h:message for="lSenha"  />
+		</h:panelGroup>
+	</h:panelGrid>
+	
+		<br />
+		<h:commandButton action="#{login.validaLogin}" value="#{msgs.btnLogar}" />
+	</h:form>
+</h:body>
+
+</html>

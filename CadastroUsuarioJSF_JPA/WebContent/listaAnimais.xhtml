@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:body>
+	<ui:composition template="templates/common.xhtml">
+		<ui:define name="content">
+			<f:loadBundle basename="resources.messages" var="msg" />
+			<h:outputLabel value="#{msg.titulo}" />
+			<h:panelGrid>
+				<h:dataTable value="#{animalMB.animais}" var="a"
+					style="border-style: dashed; border: 1px;">
+					<h:column>
+						<h:outputLabel value="#{a.apelido}" />
+					</h:column>
+					<h:column>
+						<h:outputLabel value="#{a.tamanho}" />
+					</h:column>
+					<h:column>
+						<h:outputLabel value="#{a.especie}" />
+					</h:column>
+				</h:dataTable>
+			</h:panelGrid>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

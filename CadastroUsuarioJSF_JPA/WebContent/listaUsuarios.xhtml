@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<h:outputStylesheet library="css" name="style.css" />
+</h:head>
+<ui:composition template="templates/common.xhtml">
+	<ui:define name="content">
+		<f:loadBundle basename="resources.messages" var="msg" />
+		<h:outputLabel value="#{msg.tituloPageListaUsuario}" />
+		<h:panelGrid columns="5" border="2" style="border: 2px">
+			<h:dataTable value="#{usuarioMB.usuarios}" var="u"
+				styleClass="order-table" headerClass="order-table-header"
+				rowClasses="order-table-odd-row,order-table-even-row">
+				<h:column>
+					<f:facet name="header">Nome</f:facet>
+					<h:outputLabel value="#{u.nome}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="#{msg.labelCpf}" />
+					</f:facet>
+					<h:outputLabel value="#{u.cpf}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="#{msg.labelRg}" />
+					</f:facet>
+					<h:outputLabel value="#{u.rg}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="#{msg.labelEmail}" />
+					</f:facet>
+					<h:outputLabel value="#{u.email}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="#{msg.labelDataNascimento}" />
+					</f:facet>
+					
+					<h:outputLabel   value="#{u.dataNascimento}" >
+						<f:convertDateTime pattern="dd/MM/yyyy" />
+					</h:outputLabel>
+				</h:column>
+			</h:dataTable>
+		</h:panelGrid>
+	</ui:define>
+</ui:composition>
+</html>

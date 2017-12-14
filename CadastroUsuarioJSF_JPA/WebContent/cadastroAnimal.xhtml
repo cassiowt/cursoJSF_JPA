@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:body>
+	<ui:composition template="templates/common.xhtml">
+		<ui:define name="content">
+			<f:loadBundle basename="resources.messages" var="msgs" />
+			<h:form prependId="false">
+				<h1>
+					<h:outputLabel value="#{msgs.tituloPageCadastroAnimal}" />
+				</h1>
+				<h:panelGrid columns="2">
+
+					<h:outputLabel value="#{msgs.labelApelido}" />
+					<h:panelGroup>
+						<h:inputText id="apelido" value="#{animalMB.animal.apelido}"
+							required="true" />
+						<h:message for="apelido" />
+					</h:panelGroup>
+
+					<h:outputLabel value="#{msgs.labelTamanho}" />
+					<h:inputText id="CPF" value="#{animalMB.animal.tamanho}"
+						required="true" />
+
+
+					<h:outputLabel value="#{msgs.labelEspecie}" />
+					<h:selectOneListbox value="#{animalMB.animal.especie}">
+						<f:selectItem itemLabel="Mamifero" itemValue="Mamifero" />
+						<f:selectItem itemLabel="Peixe" itemValue="Peixe" />
+						<f:selectItem itemLabel="Ave" itemValue="Ave" />
+					</h:selectOneListbox>
+					<br />
+				</h:panelGrid>
+
+				<h:commandButton action="#{animalMB.addAnimalLista}"
+					value="#{msgs.btnSalvar}" />
+				<h:commandButton type="reset" immediate="true"
+					value="#{msgs.btnCancelar}" />
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+
+</html>

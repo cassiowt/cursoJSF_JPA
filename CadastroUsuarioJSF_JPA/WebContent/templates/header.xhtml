@@ -1,0 +1,21 @@
+<!DOCTYPE	html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<body>
+	<ui:composition>
+		<h:panelGrid columns="2">
+			<h:graphicImage alt="logo"
+				url="https://i.ytimg.com/vi/NHsnw567DDo/maxresdefault.jpg"
+				height="100" width="100" />
+			<h4>Sistema de PetShop TT</h4>
+		</h:panelGrid>
+		<h:form>
+			<h:commandButton action="cadastroUsuario" value="Cadastra Usuario" />
+			<h:commandButton action="cadastroAnimal" value="Cadastro de Animais" />
+			<h:commandButton action="listaUsuarios" value="Lista Usuario" />
+			<h:commandButton action="listaAnimais" value="Listagem de Animais" />
+		</h:form>
+	</ui:composition>
+</body>
+</html>

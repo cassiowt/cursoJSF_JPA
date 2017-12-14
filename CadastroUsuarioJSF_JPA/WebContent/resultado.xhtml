@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:body>
+<f:loadBundle basename="resources.messages" var="msgs" />
+ <table border="1" bgcolor="#69bfbd" cellspacing="1">
+  <tr>
+    <th colspan="2"><h:outputLabel value="#{msgs.tituloPageListaUsuario}"/></th>
+  </tr>
+  <tr>
+    <td><h:outputLabel value="#{msgs.labelId}"/></td>
+    <td><h:outputText value="#{usuario.id}"/></td>
+  </tr>
+  <tr>
+    <td><h:outputLabel value="#{msgs.labelNome}"/></td>
+    <td><h:outputText value="#{usuario.nome}"/></td>
+  </tr>
+  <tr>
+    <td><h:outputLabel value="#{msgs.labelCpf}"/></td>
+    <td><h:outputText value="#{usuario.cpf}"/></td>
+  </tr>
+  <tr>
+    <td><h:outputLabel value="#{msgs.labelRg}"/></td>
+    <td><h:outputText value="#{usuario.rg}"/></td>
+  </tr>
+  <tr>
+    <td><h:outputLabel value="#{msgs.labelEmail}"/></td>
+    <td><h:outputText value="#{usuario.email}"/></td>
+  </tr>
+  <tr>
+    <td><h:outputLabel value="#{msgs.labelDataNascimento}"/></td>
+    <td><h:outputText value="#{usuario.dataNascimento}"/></td>
+  </tr>
+  <tr>
+    <td><h:outputLabel value="#{msgs.labelSalario}"/></td>
+    <td><h:outputText value="#{usuario.salario}"/></td>
+  </tr>
+</table>
+</h:body>
+</html>

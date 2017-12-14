@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15127376690100" configfile="/CadastroUsuarioJSF/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="cadastroUsuario.xhtml" x="369" y="528" id="pf15129983918750" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf15131717712156" inlinks="pf15132540189472" path="/cadastroUsuario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="listaUsuarios.xhtml" x="378" y="420" id="pf15129985882966" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf15131717712156 pf15132541747044" path="/listaUsuarios.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="48" y="605" id="pf151300035791011" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf151300035791012 pf15132538820530" path="/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="loginInvalido.xhtml" x="27" y="732" id="pf151300035791013" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf151300035791012" path="/loginInvalido.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="listaAnimais.xhtml" x="379" y="744" id="pf15130851343411" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf15131641290182 pf15132541747045" path="/listaAnimais.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="cadastroAnimal.xhtml" x="370" y="624" id="pf15131635509831" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf15131641290182" inlinks="pf15132540189473" path="/cadastroAnimal.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="principal.xhtml" x="192" y="588" id="pf15132538820531" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" outlinks="pf15132540189472 pf15132540189473 pf15132541747044 pf15132541747045" inlinks="pf15132538820530" path="/principal.xhtml"/>
+  <links id="pf151300035791012" target="pf151300035791013" source="pf151300035791011" outcome="erro"/>
+  <links id="pf15131641290182" target="pf15130851343411" source="pf15131635509831" outcome="lAnimais"/>
+  <links id="pf15131717712156" target="pf15129985882966" source="pf15129983918750" outcome="lUsuario"/>
+  <links id="pf15132538820530" target="pf15132538820531" source="pf151300035791011" outcome="sucesso"/>
+  <links id="pf15132540189472" target="pf15129983918750" source="pf15132538820531" outcome="cUsuario"/>
+  <links id="pf15132540189473" target="pf15131635509831" source="pf15132538820531" outcome="cAnimal"/>
+  <links id="pf15132541747044" target="pf15129985882966" source="pf15132538820531" outcome="lUsuario"/>
+  <links id="pf15132541747045" target="pf15130851343411" source="pf15132538820531" outcome="lAnimal"/>
+</pageflow:Pageflow>
