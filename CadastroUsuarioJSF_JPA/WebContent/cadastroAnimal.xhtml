@@ -4,11 +4,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 <h:body>
 	<ui:composition template="templates/common.xhtml">
 		<ui:define name="content">
 			<f:loadBundle basename="resources.messages" var="msgs" />
+			<p:growl/>
 			<h:form prependId="false">
 				<h1>
 					<h:outputLabel value="#{msgs.tituloPageCadastroAnimal}" />
@@ -17,22 +19,21 @@
 
 					<h:outputLabel value="#{msgs.labelApelido}" />
 					<h:panelGroup>
-						<h:inputText id="apelido" value="#{animalMB.animal.apelido}"
+						<p:inputText id="apelido" value="#{animalMB.animal.apelido}"
 							required="true" />
-						<h:message for="apelido" />
 					</h:panelGroup>
 
 					<h:outputLabel value="#{msgs.labelTamanho}" />
-					<h:inputText id="CPF" value="#{animalMB.animal.tamanho}"
+						<p:inputText id="tamanho" value="#{animalMB.animal.tamanho}"
 						required="true" />
 
 
-					<h:outputLabel value="#{msgs.labelEspecie}" />
-					<h:selectOneListbox value="#{animalMB.animal.especie}">
+					<h:outputLabel id="especies" value="#{msgs.labelEspecie}" layout="custom"/>
+					<p:selectOneRadio value="#{animalMB.animal.especie}">
 						<f:selectItem itemLabel="Mamifero" itemValue="Mamifero" />
 						<f:selectItem itemLabel="Peixe" itemValue="Peixe" />
 						<f:selectItem itemLabel="Ave" itemValue="Ave" />
-					</h:selectOneListbox>
+					</p:selectOneRadio>
 					<br />
 				</h:panelGrid>
 

@@ -17,7 +17,8 @@ public class Usuario implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private long id;
+	
 	private String nome;
 	private String rg;
 	private String cpf;
@@ -26,15 +27,12 @@ public class Usuario implements Serializable{
 	private String email;
 	
 	public Usuario() {
-		// TODO Auto-generated constructor stub
 	}
 	
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+
 	public String getNome() {
 		return nome;
 	}

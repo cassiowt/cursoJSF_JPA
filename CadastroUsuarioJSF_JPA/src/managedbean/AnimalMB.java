@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import dao.AnimalDAO;
 import model.Animal;
 
 @ManagedBean
@@ -12,14 +13,15 @@ import model.Animal;
 public class AnimalMB {
 	private ArrayList<Animal> animais;
 	private Animal animal;
+	private AnimalDAO dao;
 	
 	public AnimalMB() {
-		//this.animais = geraAnimais();
 		animais = new ArrayList<>();
 		animal = new Animal();
+		dao = new AnimalDAO();
 	}
 
-	public ArrayList<Animal> geraAnimais() {
+	/*public ArrayList<Animal> geraAnimais() {
 		ArrayList<Animal> animais = new ArrayList<>();
 		animais.add(new Animal("Mamifero", "Rex", 10.5f));
 		animais.add(new Animal("Mamifero", "Mimi", 20f));
@@ -29,7 +31,7 @@ public class AnimalMB {
 		animais.add(new Animal("Mamifero", "Pipa", 2f));
 		return animais;
 	}
-
+*/
 	public ArrayList<Animal> getAnimais() {
 		return animais;
 	}
@@ -47,6 +49,7 @@ public class AnimalMB {
 	}
 	
 	public String addAnimalLista() {
+		dao.save(this.animal);
 		animais.add(this.animal);
 		animal = new Animal();
 		return "listaAnimais";
